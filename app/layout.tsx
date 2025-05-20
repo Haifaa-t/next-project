@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar'
 import { Toaster } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 
-
 export default function RootLayout({
   children,
 }: {
@@ -14,19 +13,30 @@ export default function RootLayout({
 }) {
   const [isDark, setIsDark] = useState(false)
 
- 
   useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    setIsDark(prefersDark)
+   
+    const savedTheme = localStorage.getItem('theme')
+
+    if (savedTheme === 'dark') {
+      setIsDark(true)
+    } else if (savedTheme === 'light') {
+      setIsDark(false)
+    } else {
+     
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      setIsDark(prefersDark)
+    }
   }, [])
 
- 
   useEffect(() => {
     const html = document.documentElement
+
     if (isDark) {
       html.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
     } else {
       html.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
     }
   }, [isDark])
 
@@ -42,3 +52,6 @@ export default function RootLayout({
     </html>
   )
 }
+
+
+

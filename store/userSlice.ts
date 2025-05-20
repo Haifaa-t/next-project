@@ -40,7 +40,7 @@ const userSlice = createSlice({
     },
 
     logout: (state) => {
-      state.user.email = '' // فقط نمسح الإيميل لتسجيل الخروج
+      state.user.email = '' 
     },
 
     updateProfile: (

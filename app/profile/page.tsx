@@ -33,13 +33,11 @@ export default function ProfilePage() {
 
   if (!user?.email) return null
 
-  const handleSave = () => {
-    dispatch(updateProfile({ firstName, lastName, profilePicture }))
-    toast.success('Profile updated')
-    setTimeout(() => {
-      router.push('/dashboard')
-    }, 300)
-  }
+ const handleSave = () => {
+  dispatch(updateProfile({ firstName, lastName, profilePicture }))
+  toast.success('Profile updated')
+  router.push('/dashboard') 
+}
 
   const initials = (firstName?.[0] || '') + (lastName?.[0] || '')
 
@@ -114,5 +112,7 @@ export default function ProfilePage() {
     </main>
   )
 }
+
+
 
 

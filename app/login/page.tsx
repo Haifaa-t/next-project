@@ -19,7 +19,7 @@ export default function LoginPage() {
     e.preventDefault()
     if (email === 'user@tamkeen.com' && password === '123456') {
       dispatch(login({ email }))
-      toast.success('Login successful!')
+      toast.success('Login successful')
       router.push('/dashboard')
     } else {
       toast.error('Invalid credentials')

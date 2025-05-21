@@ -3,8 +3,8 @@ export async function GET() {
   const fakeContacts = [
     {
       id: 1,
-      name: 'Tamkeen Support',
-      email: 'support@tamkeen.com',
+      name: 'IT Support',
+      email: 'it@tamkeen.com',
       phone: '+966-555-123456',
     },
     {

@@ -30,7 +30,7 @@ export default function ContactPage() {
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-5xl font-extrabold text-[#4b3f29] dark:text-[#f5f5f5] mb-4"
       >
-        Get in Touch
+        Contact
       </motion.h1>
 
      
